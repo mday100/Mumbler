@@ -1,4 +1,22 @@
 Rails.application.routes.draw do
+  get 'blogs/show'
+
+  get 'blogs/new'
+
+  get 'blogs/create'
+
+  get 'blogs/edit'
+
+  get 'blogs/update'
+
+  get 'blogs/destroy'
+
+  get 'sessions/new'
+
+  get 'sessions/create'
+
+  get 'sessions/destroy'
+
   get 'users/index'
 
   get 'users/show'
