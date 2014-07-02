@@ -8,9 +8,10 @@ Rails.application.routes.draw do
   get 'login' => 'sessions#new'
   post 'sessions' => 'sessions#create'
   delete 'logout' => 'sessions#destroy'
-  post 'follow/:id' => 'users#follow'
-  post 'unfollow/:id' => 'users#unfollow'
+  post 'users/follow/:id' => 'users#follow'
+  post 'users/unfollow/:id' => 'users#unfollow'
 
-  root 'users#index'
+  root 'home#index'
+  # root 'users#index'
 
 end

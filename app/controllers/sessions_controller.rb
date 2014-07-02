@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
   			#if match set session to user_id
   			session[:user_id] = @user.id
   			flash[:notice] = "You have been signed in."
-  			redirect_to users_path
+  			redirect_to @user
   		#if no match flash then reroute to login
   		else
   			flash[:alert] = "Password does not match"

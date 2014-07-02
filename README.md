@@ -1,4 +1,9 @@
 Mumbler
 =======
 
-Mumbler Blog App
+Mumbler Blog App Fixes:
+
+- user picture uploads
+	PAPER CLIP GEM
+
+- tumbler css templates

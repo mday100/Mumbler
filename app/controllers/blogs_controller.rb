@@ -10,9 +10,9 @@ before_action :set_blog, only: [:show, :edit, :update, :destroy]
 
   def create
     @blog = Blog.new(blog_params)
-    @blog.user = Blog.find(session[:user_id])
+    @blog.user = User.find(session[:user_id])
     if @blog.save
-      flash[:notice] = "Chirp! Chirp! Chirp!"
+      flash[:notice] = "New Blog Post! Woop Woop!"
       redirect_to @blog.user
     else
       flash[:alert] = "There was a problem. :("

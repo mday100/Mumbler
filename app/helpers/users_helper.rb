@@ -11,9 +11,9 @@ def follow_link(current_user, target)
 	if current_user
 		if current_user == target
 		elsif current_user.followeds.include? target
-			link_to("unfollow", "unfollow/#{target.id}", method: "post")
+			link_to("Unfollow", "unfollow/#{target.id}", method: "post")
 		else
-			link_to("follow", "follow/#{target.id}", method: "post")
+			link_to("Follow", "follow/#{target.id}", method: "post")
 		end
 	end
 end

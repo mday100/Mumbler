@@ -1,15 +1,21 @@
-<h1>User</h1>
-<h3><%= @user.username %></h3>
+<h3><%= "#{@user.username}'s Profile" %></h3>
 <ul>
-	<li>location: <%= @user.location %></li>
-	<li>bio: <%= @user.bio %></li>
+	<li>Location: <%= @user.location %></li>
+	<li>Bio: <%= @user.bio %></li>
 </ul>
 
-<h3><%= "#{@user.username}'s Blogs" %></h3>
+<h3><%= "#{@user.username}'s Blog Posts" %></h3>
 <ul>
 	<% @user.blogs.each do |blog| %>
-		<li><%= blog.body %> (<%= link_to "X", blog_path(blog), method: "delete" %>)</li>
+		<li><%= blog.body %> (<%= link_to "Delete Post", blog_path(blog), method: "delete" %>)</li>
 	<% end %>
 </ul>
 
 <p><%= link_to "New Blog!", new_blog_path %></p>
+
+<h3><%= "#{@user.username}'s Followed Blogs" %></h3>
+<ul>
+	<% @user.followeds.each do |user| %>
+		<li><%= user.username %> <%= follow_link(current_user, user) %></li>
+	<% end %>
+</ul>

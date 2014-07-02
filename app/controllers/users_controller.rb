@@ -6,6 +6,7 @@ before_action :set_user, only: [:show, :edit, :update, :destroy, :follow, :unfol
   end
 
   def show
+    @users = User.all
   end
 
   def new
@@ -15,7 +16,7 @@ before_action :set_user, only: [:show, :edit, :update, :destroy, :follow, :unfol
   def create
     @user = User.create(user_params)
     if @user
-      flash[:notice] = "New user created."
+      flash[:notice] = "Welcome to your new account!!!."
       session[:user_id] = @user.id
       redirect_to @user
     else
