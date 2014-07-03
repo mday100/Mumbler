@@ -11,6 +11,7 @@ before_action :set_user, only: [:show, :edit, :update, :destroy, :follow, :unfol
 
   def new
     @user = User.new
+    # render layout: "clean"
   end
 
   def create

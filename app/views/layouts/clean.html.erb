@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Clean MUMBLER! </title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+	<div id="container">
+	<nav>
+		<% if current_user2 %>
+		<p><%= "Welcome #{current_user2.username}" %> | <%= link_to "Logout", logout_path, method: "delete" %></p>
+		<% else %>
+		<p><%= link_to "Sign in", login_path %> | <%= link_to "Sign up", new_user_path %></p>
+		<% end %>
+	</nav>
+
+	<%= flash[:notice] if flash[:notice] %>
+	<%= flash[:alert] if flash[:alert] %>
+
+	<%= yield %>
+	</div>
+	
+</body>
+</html>

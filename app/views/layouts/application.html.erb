@@ -1,12 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Mumbler</title>
+  <title>MUMBLER!</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+
+	<div class="body"></div>
+		<div class="grad"></div>
+		<div class="header">
+			<!-- <div>Site<span>Random</span></div> -->
+		</div>
+		<br>
+<!-- 		<div class="login">
+				<input type="text" placeholder="username" name="user"><br>
+				<input type="password" placeholder="password" name="password"><br>
+				<input type="button" value="Login">
+		</div> -->
+	<div class="login">
+		<%= form_tag('sessions', method: 'post') do %>
+			<%= text_field_tag :username, nil, placeholder: "username" %><br />
+			<%= password_field_tag :password, nil, placeholder: "password" %><br />
+			<%= submit_tag "Login" %>
+		<% end %>
+	</div>
 
 	<div id="container">
 	<nav>
@@ -16,12 +35,12 @@
 		<p><%= link_to "Sign in", login_path %> | <%= link_to "Sign up", new_user_path %></p>
 		<% end %>
 	</nav>
+	</div>
 
-	<%= flash[:notice] if flash[:notice] %>
+    <%= flash[:notice] if flash[:notice] %>
 	<%= flash[:alert] if flash[:alert] %>
 
 	<%= yield %>
-	</div>
 	
 </body>
 </html>
